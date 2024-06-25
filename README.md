@@ -10,24 +10,26 @@ Comparison of learning and inference speed of different GPU with various CNN mod
 * RTX 3090
 * A100-PCIE
 * A100-SXM4
+* RX 7900 XTX
 
 # Specification
-| Graphics Card Name |   GTX 1080 Ti  |    TITAN XP    |     TITAN V    |    RTX 2060    |   RTX 2080 Ti  |    TITAN RTX   |    A100-PCIE   |    RTX 3090    |
-|:------------------:|:--------------:|:--------------:|:--------------:|:--------------:|:--------------:|:--------------:|:--------------:|:--------------:|
-|       Process      |      16nm      |      16nm      |      12nm      |      12nm      |      12nm      |      12nm      |       7nm      |      8 nm      |
-|      Die Size      |     471mm²     |     471mm²     |     815mm²     |     445 mm²    |     754mm²     |     754mm²     |     826mm²     |     628 mm²    |
-|     Transistors    | 11,800 million | 11,800 million | 21,100 million | 10,800 million | 18,600 million | 18,600 million | 54,200 million | 28,300 million |
-|     CUDA Cores     |   3584 Cores   |   3840 Cores   |   5120 Cores   |   1920 Cores   |   4352 Cores   |   4608 Cores   |   6912 Cores   |   10496 Cores  |
-|    Tensor Cores    |      None      |      None      |    640 Cores   |       240      |    544 Cores   |    576 Cores   |    432 Cores   |    328 Cores   |
-|     Clock(base)    |    1481 MHz    |    1405 Mhz    |    1200 MHz    |    1365 MHz    |    1350 MHz    |    1350 MHz    |     765 MHz    |    1395 MHz    |
-|     FP16 (half)    |  177.2 GFLOPS  |   189.8GFLOPS  |  29,798 GFLOPS |  12.90 TFLOPS  |  26,895 GFLOPS |  32.62 TFLOPS  |  77.97 TFLOPS  |  35.58 TFLOPS  |
-|    FP32 (float)    |  11,340 GFLOPS |   12.15FLOPS   |  14,899 GFLOPS |  6.451 TFLOPS  |  13,448 GFLOPS |  16.31 TFLOPS  |  19.49 TFLOPS  |  35.58 TFLOPS  |
-|    FP64 (double)   |  354.4 GFLOPS  |  379.7 GFLOPS  |  7,450 GFLOPS  |  201.6 GFLOPS  |  420.2 GFLOPS  |  509.8 GFLOPS  |  9.746 TFLOPS  |  556.0 GFLOPS  |
-|       Memory       |   11GB GDDR5X  |     GDDR5X     |   12 GB HBM2   |   6GB GDDR6    |   11 GB GDDR6  |   24 GB GDDR6  |   40GB HBM2e   |   24GB GDDR6X  |
-|  Memory Interface  |     352-bit    |     384bit     |    3072-bit    |     192 bit    |     352-bit    |     384 bit    |    5120 bit    |     384 bit    |
-|  Memory Bandwidth  |    484 GB/s    |    547.6GB/s   |     653GB/s    |   336.0 GB/s   |    616 GB/s    |   672.0 GB/s   |   1,555 GB/s   |   936.2 GB/s   |
-|        Price       |     $699 US    |    $1,199 US   |    $2,999 US   |    $ 349 US    |    $1,199 US   |    $2,499 US   |                |   $ 1,499 USD  |
-|    Release Date    | Mar 10th, 2017 |  Apr 6th 2017  |  Dec 7th, 2017 |  Jan 7th, 2019 | Sep 20th, 2018 | Dec 18th, 2018 | Jun 22nd, 2020 |  Sep 1st, 2020 |
+| Graphics Card Name |  GTX 1080 Ti   |    TITAN XP    |    TITAN V     |    RTX 2060    |  RTX 2080 Ti   |   TITAN RTX    |   A100-PCIE    |    RTX 3090    |    RTX 4090     |  RX 7900 XTX   |
+|:------------------:|:--------------:|:--------------:|:--------------:|:--------------:|:--------------:|:--------------:|:--------------:|:--------------:|:---------------:|:--------------:|
+|      Process       |      16nm      |      16nm      |      12nm      |      12nm      |      12nm      |      12nm      |      7nm       |      8 nm      |       5nm       |      5nm       |
+|      Die Size      |     471mm²     |     471mm²     |     815mm²     |    445 mm²     |     754mm²     |     754mm²     |     826mm²     |    628 mm²     |     609 mm²     |    529 mm²     |
+|    Transistors     | 11,800 million | 11,800 million | 21,100 million | 10,800 million | 18,600 million | 18,600 million | 54,200 million | 28,300 million | 76,300 million  | 57,700 million |
+|     CUDA Cores     |   3584 Cores   |   3840 Cores   |   5120 Cores   |   1920 Cores   |   4352 Cores   |   4608 Cores   |   6912 Cores   |  10496 Cores   |  16,384 Cores   |      None      |
+|    Tensor Cores    |      None      |      None      |   640 Cores    |   240 Cores    |   544 Cores    |   576 Cores    |   432 Cores    |   328 Cores    |    512 Cores    |      None      |
+|   Compute Units    |      None      |      None      |      None      |      None      |      None      |      None      |      None      |      None      |      None       |       96       |
+|    Clock(base)     |    1481 MHz    |    1405 Mhz    |    1200 MHz    |    1365 MHz    |    1350 MHz    |    1350 MHz    |    765 MHz     |    1395 MHz    |    2235 MHz     |    1929 MHz    |
+|    FP16 (half)     |  177.2 GFLOPS  |  189.8GFLOPS   | 29,798 GFLOPS  |  12.90 TFLOPS  | 26,895 GFLOPS  |  32.62 TFLOPS  |  77.97 TFLOPS  |  35.58 TFLOPS  |  82.58 TFLOPS   |  122.8 TFLOPS  |
+|    FP32 (float)    | 11,340 GFLOPS  |   12.15FLOPS   | 14,899 GFLOPS  |  6.451 TFLOPS  | 13,448 GFLOPS  |  16.31 TFLOPS  |  19.49 TFLOPS  |  35.58 TFLOPS  |  82.58 TFLOPS   |  61.39 TFLOPS  |
+|   FP64 (double)    |  354.4 GFLOPS  |  379.7 GFLOPS  |  7,450 GFLOPS  |  201.6 GFLOPS  |  420.2 GFLOPS  |  509.8 GFLOPS  |  9.746 TFLOPS  |  556.0 GFLOPS  |  1,290 GFLOPS   |  1.918 TFLOPS  |
+|       Memory       |  11GB GDDR5X   |     GDDR5X     |   12 GB HBM2   |   6GB GDDR6    |  11 GB GDDR6   |  24 GB GDDR6   |   40GB HBM2e   |  24GB GDDR6X   |  24 GB GDDR6X   |  24 GB GDDR6   |
+|  Memory Interface  |    352-bit     |     384bit     |    3072-bit    |    192 bit     |    352-bit     |    384 bit     |    5120 bit    |    384 bit     |     384 bit     |    384 bit     |
+|  Memory Bandwidth  |    484 GB/s    |   547.6GB/s    |    653GB/s     |   336.0 GB/s   |    616 GB/s    |   672.0 GB/s   |   1,555 GB/s   |   936.2 GB/s   |    1.01 TB/s    |   960.0 GB/s   |
+|       Price        |    $699 US     |   $1,199 US    |   $2,999 US    |    $ 349 US    |   $1,199 US    |   $2,499 US    |                |  $ 1,499 USD   |   $ 1,599 USD   |   $ 999 USD    |
+|    Release Date    | Mar 10th, 2017 |  Apr 6th 2017  | Dec 7th, 2017  | Jan 7th, 2019  | Sep 20th, 2018 | Dec 18th, 2018 | Jun 22nd, 2020 | Sep 1st, 2020  | Sep 20th, 2022  | Nov 3rd, 2022  |
 
 [_reference site_](https://www.techpowerup.com/gpu-specs/)
 
